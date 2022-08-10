@@ -1,5 +1,4 @@
-<%= form_with url: api_users_by_email_path do |f| %>
-
+<div data-controller="users-by-email-auth">
   <div>
     <div class="flex">
       <div class="flex-none cursor-pointer" data-modal-target="closeButton">
@@ -21,17 +20,16 @@
     <div class="pt-4">
       <h4 class="text-lg text-gray-900 leading-6 mt-2 font-medium">Welcome to Globalbnb</h4>
       <div class="border border-gray-300 rounded-md px-3 py-2 shadow-sm focus-within:ring-1 focus-within:ring-black focus-within:border-black mt-6">
-        <%= f.label :email, class: "block text-xs font-medium text-gray-900" %>
-        <%= f.email_field :email, placeholder: "you@example.com", class: "block w-full border-0 p-0 text-gray-900 placeholder-gray-500 focus:outline-none sm:text-sm" %>
+        <label for="email" class="block text-xs font-medium text-gray-900">Email</label>
+        <input data-users-by-email-auth-target="email" type="text" name="email" id="email" class="block w-full border-0 p-0 text-gray-900 placeholder-gray-500 focus:outline-none sm:text-sm" placeholder="you@example.com">
       </div>
     </div>
   </div>
   <div class="my-5 sm:my-6">
-    <%= f.submit "Continue", class: "inline-flex justify-center w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-primary text-base font-medium text-white hover:bg-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary sm:text-sm" %>
+    <button data-users-by-email-auth-target="submit" type="button" class="inline-flex justify-center w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-primary text-base font-medium text-white hover:bg-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary sm:text-sm">Continue</button>
   </div>
+</div>
 
-
-<% end %>
 
 
 <div class="relative">

@@ -12,3 +12,6 @@ application.register("hello", HelloController)
 
 import ModalController from "./modal_controller"
 application.register("modal", ModalController)
+
+import UsersByEmailAuthController from "./users_by_email_auth_controller"
+application.register("users-by-email-auth", UsersByEmailAuthController)
