@@ -8,7 +8,7 @@ RSpec.describe "Api::UsersByEmails", type: :request do
     context "user exists" do
       it "is successful" do
         user = create(:user)
-        get api_users_by_email_path, params: { email: user.email }, headers: :headers
+        get api_users_by_email_path, params: { email: user.email }, headers: headers
         expect(response).to be_successful
       end
     end
