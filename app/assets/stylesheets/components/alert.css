@@ -1,0 +1,19 @@
+/*.nav-link {*/
+/*    @apply block no-underline text-gray-500 hover:text-gray-900 px-2 py-1 text-base font-medium whitespace-nowrap;*/
+/*    line-height: 30px;*/
+
+/*&.active {*/
+/*     @apply font-semibold;*/
+/* }*/
+
+/*&:focus {*/
+/*     @apply text-gray-900;*/
+/* }*/
+/*}*/
+/*.invalid-inset-input-text-field {*/
+/*    @apply border-color-red-900 !important;*/
+/*    label {*/
+/*        @apply text-red-900 !important;*/
+/*    }*/
+/*    input[type="email"], input[type="text"]*/
+/*}*/

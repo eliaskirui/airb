@@ -59,6 +59,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 5.1', '>= 5.1.2'
   gem 'factory_bot_rails'
   gem 'pry', '~> 0.14.1'
+  gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
 end
 
 group :development do
@@ -72,3 +73,8 @@ group :development do
   # gem "spring"
 end
 
+group :test do
+  gem 'shoulda-matchers', '~> 5.0'
+end
+
+gem 'geocoder', '~> 1.8'
