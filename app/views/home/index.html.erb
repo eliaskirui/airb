@@ -1,7 +1,7 @@
 <div data-controller="geolocation"
      class="container mx-auto py-24"
-     data-latitude=""
-     data-longitude=""
+     data-latitude="<%= current_user&.profile&.latitude %>"
+     data-longitude="<%= current_user&.profile&.longitude %>"
 >
   <ul role="list" class="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-4 sm:gap-x-6 lg:grid-cols-5 xl:gap-x-8">
     <% @properties.each do |property| %>
@@ -18,7 +18,7 @@
           </button>
         </div>
         <p class="mt-2 block text-sm font-medium text-gray-900 truncate pointer-events-none"><%= property.city %>, <%= property.state %> <%= property.country %></p>
-        <p data-distance-away class="block text-sm font-medium text-gray-500 pointer-events-none">5,150 KM away</p>
+        <p data-distance-away class="block text-sm font-medium text-gray-500 pointer-events-none"></p>
         <p class="block text-sm font-medium text-gray-500 pointer-events-none">Aug 25 - 30</p>
         <p class="block text-sm font-medium text-gray-500 pointer-events-none">$200 per night</p>
       </li>

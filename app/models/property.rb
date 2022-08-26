@@ -12,7 +12,8 @@ class Property < ApplicationRecord
   # after_validation :geocode, unless: ->(obj){ obj.latitude.present? and obj.present }
 
   def address
-    [state, "AU"].compact.join(',')
+    # [state, "AU"].compact.join(',')
+    [state, country].compact.join(', ')
 
     # return "19 Peachey Rd, Davoren Park SA 5113, Australia"
     # [address_1, address_2, city, state, country].compact.join(',')
