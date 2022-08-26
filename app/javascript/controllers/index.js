@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import GeolocationController from "./geolocation_controller"
+application.register("geolocation", GeolocationController)
+
 import HeaderController from "./header_controller"
 application.register("header", HeaderController)
 
