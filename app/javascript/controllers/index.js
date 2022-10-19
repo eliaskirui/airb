@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import FavoritesController from "./favorites_controller"
+application.register("favorites", FavoritesController)
+
 import GeolocationController from "./geolocation_controller"
 application.register("geolocation", GeolocationController)
 

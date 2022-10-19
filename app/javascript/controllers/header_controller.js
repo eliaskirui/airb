@@ -7,7 +7,7 @@ export default class extends Controller {
         // this.element.textContent = "Hello World!"
         this.openUserMenuTarget.addEventListener('click', this.toggleDropdownMenu)
 
-        this.UserAuthLinkTargets.forEach((link) => {
+        this.userAuthLinkTargets.forEach((link) => {
             link.addEventListener('click', (e) => {
                 e.preventDefault()
                 document.getElementById('modal-trigger').click();
