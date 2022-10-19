@@ -81,6 +81,7 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV["DATABASE_URL"] %>
   database: airb_production
   username: airb
   password: <%= ENV["AIRB_DATABASE_PASSWORD"] %>
