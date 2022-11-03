@@ -80,3 +80,4 @@ end
 
 gem 'geocoder', '~> 1.8'
 gem 'money-rails', '~> 1.15'
+gem 'jsonapi-serializer'
