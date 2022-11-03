@@ -44,7 +44,7 @@
          </svg>
        </div>
         <p data-distance-away class="block text-sm font-medium text-gray-500 pointer-events-none"></p>
-        <p class="block text-sm font-medium text-gray-500 pointer-events-none">Aug 25 - 30</p>
+        <p class="block text-sm font-medium text-gray-500 pointer-events-none"><%= property.available_dates.first %> - <%= property.available_dates.last %></p>
         <p class="block text-sm font-medium text-gray-500 pointer-events-none"><span class="text-black"><%= humanized_money_with_symbol(property.price) %> per night</span></p>
       </li>
     <% end %>
