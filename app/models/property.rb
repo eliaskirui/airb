@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class Property < ApplicationRecord
   validates :name, presence: true
   validates :headline, presence: true
@@ -12,6 +13,8 @@ class Property < ApplicationRecord
   has_many :reviews, as: :reviewable
   has_many :favorites, dependent: :destroy
   has_many :favorited_users, through: :favorites, source: :user
+  has_many :reservations, dependent: :destroy
+  has_many :reserved_users, through: :reservations, source: :user
 
   geocoded_by :address
   after_validation :geocode, if: -> { latitude.blank? && longitude.blank? }
@@ -34,5 +37,13 @@ class Property < ApplicationRecord
   # def average_rating
   #   reviews.average(:rating)
   # end
+  def available_dates
+    next_reservation = reservations.future_reservations.first
+    # next_reservation = reservations.where("reservation_date >  ?", Date.today).order(:reservation_date).first
+    date_format = "%b %e"
+    return Date.tomorrow.strftime(date_format)..Date.today.end_of_year.strftime(date_format) if next_reservation == nil
+
+    Date.tomorrow.strftime(date_format)..next_reservation.reservation_date.strftime(date_format)
+  end
 
 end
