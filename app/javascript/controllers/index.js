@@ -19,5 +19,11 @@ application.register("hello", HelloController)
 import ModalController from "./modal_controller"
 application.register("modal", ModalController)
 
+import ShareController from "./share_controller"
+application.register("share", ShareController)
+
+import ShareModalController from "./share_modal_controller"
+application.register("share-modal", ShareModalController)
+
 import UsersByEmailAuthController from "./users_by_email_auth_controller"
 application.register("users-by-email-auth", UsersByEmailAuthController)

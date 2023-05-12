@@ -4,32 +4,30 @@ import {enter, leave, toggle} from "el-transition";
 export default class extends Controller {
     static targets = ['closeButton']
     connect() {
-        enter(document.getElementById('modal-wrapper'));
-        enter(document.getElementById('modal-backdrop'));
-        enter(document.getElementById('modal-panel'));
-
-        document.getElementById('modal-wrapper').addEventListener('click', this.closeModal);
-        this.closeButtonTarget.addEventListener('click', () =>{
-            leave(document.getElementById('modal-wrapper'));
-            leave(document.getElementById('modal-backdrop'));
-            leave(document.getElementById('modal-panel'));
-        } )
+        document.getElementById(`modal-${this.element.dataset.modalTriggerId}-wrapper`).addEventListener('click', (event) => {
+             this.closeModal(event, this.element.dataset.modalTriggerId);
+        });
+        this.closeButtonTarget.addEventListener('click',  () => {
+            leave(document.getElementById(`modal-${this.element.dataset.modalTriggerId}-wrapper`));
+            leave(document.getElementById(`modal-${this.element.dataset.modalTriggerId}-backdrop`));
+            leave(document.getElementById(`modal-${this.element.dataset.modalTriggerId}-panel`));
+        })
     }
 
     closeModal(event) {
-        const modalPanelClicked = document.getElementById('modal-panel').contains(event.target);
+        const modalPanelClicked = document.getElementById(`modal-${this.element.dataset.modalTriggerId}-panel`).contains(event.target);
 
-        if (!modalPanelClicked && event.target.id !== 'modal-trigger')  {
+        if (!modalPanelClicked && event.target.id !== this.element.dataset.modalTriggerId)  {
             console.log('inside if state')
-            leave(document.getElementById('modal-wrapper'));
-            leave(document.getElementById('modal-backdrop'));
-            leave(document.getElementById('modal-panel'));
+            leave(document.getElementById(`modal-${this.element.dataset.modalTriggerId}-wrapper`));
+            leave(document.getElementById(`modal-${this.element.dataset.modalTriggerId}-backdrop`));
+            leave(document.getElementById(`modal-${this.element.dataset.modalTriggerId}-panel`));
         }
     }
     showModal() {
-        enter(document.getElementById('modal-wrapper'));
-        enter(document.getElementById('modal-backdrop'));
-        enter(document.getElementById('modal-panel'));
+        enter(document.getElementById(`modal-${this.element.dataset.modalTriggerId}-wrapper`));
+        enter(document.getElementById(`modal-${this.element.dataset.modalTriggerId}-backdrop`));
+        enter(document.getElementById(`modal-${this.element.dataset.modalTriggerId}-panel`));
     }
 
 }
