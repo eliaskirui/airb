@@ -15,7 +15,6 @@
     state: Faker::Address.state,
     country: "Australia",
     price: Money.from_amount((25..100).to_a.sample)
-
   )
   property.images.attach(io: File.open(Rails.root.join("db", "sample", "images", "property_#{i + 1}.png")), filename: property.name)
 

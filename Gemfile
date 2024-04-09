@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 # ruby "3.1.2"
 ruby "3.2.2"
 
-gem 'devise'
+gem "devise"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.3", ">= 7.0.3.1"
@@ -43,7 +43,7 @@ gem "redis", "~> 4.0"
 # gem "bcrypt", "~> 3.1.7"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
+gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
@@ -56,11 +56,11 @@ gem "image_processing", "~> 1.2"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[ mri mingw x64_mingw ]
-  gem 'rspec-rails', '~> 5.1', '>= 5.1.2'
-  gem 'factory_bot_rails'
-  gem 'pry', '~> 0.14.1'
-  gem 'faker'
+  gem "debug", platforms: %i[mri mingw x64_mingw]
+  gem "rspec-rails", "~> 5.1", ">= 5.1.2"
+  gem "factory_bot_rails"
+  gem "pry", "~> 0.14.1"
+  gem "faker"
   # gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
 end
 
@@ -76,9 +76,9 @@ group :development do
 end
 
 group :test do
-  gem 'shoulda-matchers', '~> 5.0'
+  gem "shoulda-matchers", "~> 5.0"
 end
 
-gem 'geocoder', '~> 1.8'
-gem 'money-rails', '~> 1.15'
-gem 'jsonapi-serializer'
+gem "geocoder", "~> 1.8"
+gem "money-rails", "~> 1.15"
+gem "jsonapi-serializer"
